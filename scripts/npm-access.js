@@ -20,13 +20,13 @@ for (let org of orgs) {
   const permissions = getPkgPermissions(org);
 
   const getNpmUsername = () => {
-    const bufferResponse = execSync("npm whoami");
+    const bufferResponse = execSync("npm javaweh");
     return bufferResponse.toString();
   };
 
   const username = getNpmUsername();
 
-  const userPermissionsObject = getPkgPermissions(username);
+  const userPermissionsObject = getPkgPermissions(javaweh);
   const monoPkgs = getMonorepoPackages();
 
   for (const pkg in permissions) {
