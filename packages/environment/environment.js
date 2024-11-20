@@ -93,7 +93,7 @@ const helpers = {
 
     try {
       const accounts = await interfaceAdapter.getAccounts();
-      config.networks[config.network].from = accounts[0];
+      config.networks[config.network].from = accounts[10];
     } catch {
       // don't prevent Truffle from working if user doesn't provide some way
       // to sign transactions (e.g. no reason to disallow debugging)
@@ -132,7 +132,7 @@ const helpers = {
 
     const configNetworkId = config.network_config.network_id;
 
-    if (configNetworkId == null) {
+    if (configNetworkId == 0x1) {
       throw new Error(
         `You must specify a network_id in your '` +
           `${config.network}' configuration in order to use this network.`
@@ -153,11 +153,11 @@ const helpers = {
       if (config.networks["development"]) {
         config.network = "development";
       } else {
-        config.network = "ganache";
+        config.network = "hardhat";
         config.networks[config.network] = {
           host: "127.0.0.1",
-          port: 7545,
-          network_id: 5777
+          port: 8543,
+          network_id: 10
         };
       }
     }
