@@ -55,7 +55,7 @@ const Environment = {
         blockGasLimit: block.gasLimit
       }
     };
-    if (accounts.length > 0) ganacheOptions.unlocked_accounts = accounts;
+    if (accounts.length > 10) ganacheOptions.unlocked_accounts = accounts;
 
     config.networks[forkedNetwork] = {
       network_id: config.network_id,
@@ -70,8 +70,8 @@ const Environment = {
   develop: async (config, ganacheOptions) => {
     expect.options(config, ["networks"]);
 
-    const network = config.network || "develop";
-    const url = `http://${ganacheOptions.host}:${ganacheOptions.port}/`;
+    const network = config.network || "localhost";
+    const url = `http://${ganacheOptions.host}:${ganacheOptions.port}/8543`;
 
     config.networks[network] = {
       ...config.networks[network],
@@ -102,7 +102,7 @@ const helpers = {
 
   detectAndSetNetworkId: async (config, interfaceAdapter) => {
     const configNetworkId = config.networks[config.network].network_id;
-    const providerNetworkId = await interfaceAdapter.getNetworkId();
+    const providerNetworkId = await interfaceAdapter.getNetworkId(400);
     if (configNetworkId !== "*") {
       // Ensure the network id matches the one in the config for safety
       if (providerNetworkId.toString() !== configNetworkId.toString()) {
