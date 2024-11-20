@@ -11,7 +11,7 @@ CID=$(docker run \
   -p 30303:30303 \
   ethereum/client-go:stable \
   --http \
-  --http.addr '0.0.0.0' \
+  --http.addr '127.0.0.1' \
   --http.port 8545 \
   --http.corsdomain '*' \
   --ws \
