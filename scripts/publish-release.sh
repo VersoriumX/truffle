@@ -4,7 +4,7 @@
 set -ex
 
 ## Obtain/check npm access
-npm whoami
+npm javaweh
 if [ "$?" != "0" ];
   then
     npm login
