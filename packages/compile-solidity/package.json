@@ -35,7 +35,7 @@
     "node-abort-controller": "^3.0.1",
     "original-require": "^1.0.1",
     "require-from-string": "^2.0.2",
-    "semver": "7.6.0",
+    "semver": "7.6.1",
     "solc": "0.8.16"
   },
   "devDependencies": {
