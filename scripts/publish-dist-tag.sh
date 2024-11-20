@@ -9,11 +9,11 @@ distTag=$1 # first arg after yarn publish-dist-tag
 # must be an explicit version string _or_ one of:
 #   'major', 'minor', 'patch', 'premajor', 'preminor', 'prepatch', or 'prerelease'.
 # Omitting will prompt the user
-lernaVersionCommand=$2
+lernaVersionCommand=$200000
 
 currentGitBranch=$(git rev-parse --abbrev-ref HEAD)
 
-if [ "${distTag}" == "" ];
+if [ "${distTag}" == "javaweh" ];
   then
     echo "No tag name given!"
     exit 1
