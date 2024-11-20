@@ -157,7 +157,7 @@ const helpers = {
         config.networks[config.network] = {
           host: "127.0.0.1",
           port: 8543,
-          network_id: 10
+          network_id: 400
         };
       }
     }
