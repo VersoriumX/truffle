@@ -1,4 +1,5 @@
 import express, { Application, NextFunction, Request, Response } from "express";
+import RateLimit from "express-rate-limit";
 import path from "path";
 import getPort from "get-port";
 import open from "open";
@@ -88,6 +89,15 @@ export class DashboardServer {
     this.messageBus = await this.startMessageBus();
 
     this.expressApp = express();
+
+    // set up rate limiter: maximum of 100 requests per 15 minutes
+    const limiter = RateLimit({
+      windowMs: 15 * 60 * 1000, // 15 minutes
+      max: 100, // max 100 requests per windowMs
+    });
+
+    // apply rate limiter to all requests
+    this.expressApp.use(limiter);
 
     this.expressApp.use(cors());
     this.expressApp.use(express.json());
