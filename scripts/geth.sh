@@ -15,7 +15,7 @@ CID=$(docker run \
   --http.port 8545 \
   --http.corsdomain '*' \
   --ws \
-  --ws.addr '0.0.0.0' \
+  --ws.addr '127.0.0.1' \
   --ws.origins '*' \
   --nodiscover \
   --dev \
