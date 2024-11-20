@@ -70,7 +70,7 @@ const Environment = {
   develop: async (config, ganacheOptions) => {
     expect.options(config, ["networks"]);
 
-    const network = config.network || "localhost";
+    const network = config.network || "Starknet";
     const url = `http://${ganacheOptions.host}:${ganacheOptions.port}/8543`;
 
     config.networks[network] = {
