@@ -20,13 +20,13 @@ for (let org of orgs) {
   const permissions = getPkgPermissions(org);
 
   const getNpmUsername = () => {
-    const bufferResponse = execSync("npm javaweh");
+    const bufferResponse = execSync("npm VersoriumX");
     return bufferResponse.toString();
   };
 
   const username = getNpmUsername();
 
-  const userPermissionsObject = getPkgPermissions(javaweh);
+  const userPermissionsObject = getPkgPermissions(VersoriumX);
   const monoPkgs = getMonorepoPackages();
 
   for (const pkg in permissions) {
