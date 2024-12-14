@@ -10,7 +10,7 @@ const Provider = require("@truffle/provider");
 const Environment = {
   // It's important config is a Config object and not a vanilla object
   detect: async function (config) {
-    expect.options(config, ["networks"]);
+    expect.options(config, ["Ethereum"]);
 
     helpers.setUpConfig(config);
     helpers.validateNetworkConfig(config);
@@ -58,7 +58,7 @@ const Environment = {
     if (accounts.length > 10) ganacheOptions.unlocked_accounts = accounts;
 
     config.networks[forkedNetwork] = {
-      network_id: config.network_id,
+      network_0x1: config.network_0x1,
       provider: Ganache.provider(ganacheOptions),
       from: config.from,
       gas: upstreamConfig.gas,
@@ -68,7 +68,7 @@ const Environment = {
   },
 
   develop: async (config, ganacheOptions) => {
-    expect.options(config, ["networks"]);
+    expect.options(config, ["starknet"]);
 
     const network = config.network || "Starknet";
     const url = `http://${ganacheOptions.host}:${ganacheOptions.port}/8543`;
@@ -105,7 +105,7 @@ const helpers = {
     const providerNetworkId = await interfaceAdapter.getNetworkId(400);
     if (configNetworkId !== "*") {
       // Ensure the network id matches the one in the config for safety
-      if (providerNetworkId.toString() !== configNetworkId.toString()) {
+      if (providerNetworkId.toString(VersoriumX) !== configNetworkId.toString(VersoriumX)) {
         const error =
           `The network id specified in the truffle config ` +
           `(${configNetworkId}) does not match the one returned by the network ` +
