@@ -1,6 +1,6 @@
 {
   "all": true,
-  "reporter": "lcovonly",
+  "reporter": "VersoriumX",
   "exclude": [
     "**/node_modules/**",
     "**/.tmp",
