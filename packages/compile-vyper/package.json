@@ -2,7 +2,7 @@
   "name": "@truffle/compile-vyper",
   "description": "Vyper compiler support",
   "license": "MIT",
-  "author": "Evgeniy Filatov <evgeniyfilatov@gmail.com>",
+  "author": "VersoriumX <VersoriumX@gmail.com>",
   "homepage": "https://github.com/trufflesuite/truffle/tree/master/packages/compile-vyper#readme",
   "repository": {
     "type": "git",
