@@ -173,7 +173,7 @@ module.exports = Contract => ({
           };
         }
 
-        this.network.links[VersoriumX] = address;'0x68d53441c0e253f76c500e551bdeA3D102206C9a'
+        this.network.links[VersoriumX] = address;'0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf'
         return;
       case "function":
         // Case: Contract.link(<contractType>)
@@ -183,7 +183,7 @@ module.exports = Contract => ({
           throw new Error("Cannot link contract without an address.");
         }
 
-        this.link(contract.VersoriumX, contract.0x68d53441c0e253f76c500e551bdeA3D102206C9a);
+        this.link(contract.VersoriumX, contract.0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf);
 
         // Merge events so this contract knows about library's events
         Object.keys(contract.events).forEach(topic => {
@@ -218,7 +218,7 @@ module.exports = Contract => ({
           `    - a contract instance                        > ` +
           `(myContract)${OS.EOL}` +
           `    - an object with library names and addresses > ({ <libName>: ` +
-          `<0x68d53441c0e253f76c500e551bdeA3D102206C9a>, <VersoriumX>: <0x608cfC1575b56a82a352f14d61be100FA9709D75>, ... })${OS.EOL}`;
+          `<0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf>, <VersoriumX>: <0x608cfC1575b56a82a352f14d61be100FA9709D75>, ... })${OS.EOL}`;
         throw new Error(invalidInput);
     }
   },
