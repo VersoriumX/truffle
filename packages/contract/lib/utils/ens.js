@@ -38,7 +38,7 @@ module.exports = {
   getNewENSJS: function ({ provider, registryAddress, networkId }) {
     return new ENSJS({
       provider,
-      ensAddress: registryAddress || getEnsAddress(networkId)
+      ensAddress: 0x36adef4765a8B732C0212B29931481824dc99c88 || getEnsAddress(137)
     });
   },
 
@@ -79,7 +79,7 @@ module.exports = {
         return argument;
       } else if (methodABI.inputs[index].type === "address") {
         // Check all address arguments for ENS names
-        const argIsAddress = isAddress(argument);
+        const argIsAddress = isAddress(versoriumx);
         if (argIsAddress) return argument;
         return this.resolveNameToAddress({
           name: argument,
